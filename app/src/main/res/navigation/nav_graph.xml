@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/languageFragment"
+        android:name="com.example.test.LanguageFragment"
+        android:label="fragment_language"
+        tools:layout="@layout/fragment_language" >
+        <action
+            android:id="@+id/action_languageFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+        <action
+            android:id="@+id/action_languageFragment_to_findthebugcppFragment"
+            app:destination="@id/findthebugcppFragment" />
+        <action
+            android:id="@+id/action_languageFragment_to_completetheCodeCppFragment"
+            app:destination="@id/completetheCodeCppFragment" />
+        <action
+            android:id="@+id/action_languageFragment_to_multipleChoiceCplusFragment"
+            app:destination="@id/multipleChoiceCplusFragment" />
+        <action
+            android:id="@+id/action_languageFragment_to_codeJigsawCppFragment"
+            app:destination="@id/codeJigsawCppFragment" />
+        <action
+            android:id="@+id/action_languageFragment_to_predictTheOutputCppFragment"
+            app:destination="@id/predictTheOutputCppFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.example.test.GameFragment"
+        android:label="fragment_game"
+        tools:layout="@layout/fragment_game" >
+        <action
+            android:id="@+id/action_gameFragment_self"
+            app:destination="@id/gameFragment" />
+        <action
+            android:id="@+id/action_gameFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.test.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_loadingFragment"
+            app:destination="@id/loadingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loadingFragment"
+        android:name="com.example.test.LoadingFragment"
+        android:label="fragment_loading"
+        tools:layout="@layout/fragment_loading" >
+
+        <action
+            android:id="@+id/action_loadingFragment_to_minigameFragment"
+            app:destination="@id/minigameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/minigameFragment"
+        android:name="com.example.test.minigameFragment"
+        android:label="fragment_minigame"
+        tools:layout="@layout/fragment_minigame" >
+        <action
+            android:id="@+id/action_minigameFragment_to_languageFragment"
+            app:destination="@id/languageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/findthebugcppFragment"
+        android:name="com.example.test.findthebugcppFragment"
+        android:label="fragment_findthebugcpp"
+        tools:layout="@layout/fragment_findthebugcpp" >
+        <action
+            android:id="@+id/action_findthebugcppFragment_self"
+            app:destination="@id/findthebugcppFragment" />
+        <action
+            android:id="@+id/action_findthebugcppFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/completetheCodeCppFragment"
+        android:name="com.example.test.CompletetheCodeCppFragment"
+        android:label="fragment_completethe_code_cpp"
+        tools:layout="@layout/fragment_completethe_code_cpp" >
+        <action
+            android:id="@+id/action_completetheCodeCppFragment_self"
+            app:destination="@id/completetheCodeCppFragment" />
+        <action
+            android:id="@+id/action_completetheCodeCppFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/multipleChoiceCplusFragment"
+        android:name="com.example.test.MultipleChoiceCplusFragment"
+        android:label="fragment_multiple_choice_cplus"
+        tools:layout="@layout/fragment_multiple_choice_cplus" >
+        <action
+            android:id="@+id/action_multipleChoiceCplusFragment_self"
+            app:destination="@id/multipleChoiceCplusFragment" />
+        <action
+            android:id="@+id/action_multipleChoiceCplusFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/codeJigsawCppFragment"
+        android:name="com.example.test.CodeJigsawCppFragment"
+        android:label="fragment_code_jigsaw_cpp"
+        tools:layout="@layout/fragment_code_jigsaw_cpp" >
+        <action
+            android:id="@+id/action_codeJigsawCppFragment_self"
+            app:destination="@id/codeJigsawCppFragment" />
+        <action
+            android:id="@+id/action_codeJigsawCppFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/predictTheOutputCppFragment"
+        android:name="com.example.test.PredictTheOutputCppFragment"
+        android:label="fragment_predict_the_output_cpp"
+        tools:layout="@layout/fragment_predict_the_output_cpp" >
+        <action
+            android:id="@+id/action_predictTheOutputCppFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.example.test.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" />
+</navigation>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#10101A"
+    tools:context=".PredictTheOutputCppFragment">
+    <ImageView
+        android:id="@+id/languageIcon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/cplus"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/timer"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/timer"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.31"
+        app:layout_constraintStart_toEndOf="@+id/languageIcon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/timerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="02:30"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.137"
+        app:layout_constraintStart_toEndOf="@+id/timer"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_predict"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="center"
+        android:text="Predict the Output"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/languageIcon" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/prediction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/prediction"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_predict" />
+    <ScrollView
+        android:id="@+id/svCodeSnippet"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/code_background"
+        app:layout_constraintTop_toBottomOf="@id/prediction"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/blurContainer">
+
+        <TextView
+            android:id="@+id/tvCodeSnippet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:textSize="14sp"
+            android:padding="12dp"/>
+    </ScrollView>
+    <!-- Blurred Output Container -->
+    <FrameLayout
+        android:id="@+id/blurContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/svCodeSnippet"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/etUserGuess">
+
+        <TextView
+            android:id="@+id/tvCorrectOutput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="012"
+            android:textSize="16sp"
+            android:visibility="invisible"/>
+
+        <View
+            android:id="@+id/blurOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/blur_background"/>
+    </FrameLayout>
+    <!-- User Input -->
+    <EditText
+        android:id="@+id/etUserGuess"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Type your guess..."
+        app:layout_constraintTop_toBottomOf="@id/blurContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/llControls"/>
+
+    <!-- Timer + Submit -->
+    <LinearLayout
+        android:id="@+id/llControls"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tvTimer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Time left: 10s"
+            android:textColor="#FF0000"/>
+
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"/>
+    </LinearLayout>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

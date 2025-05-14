@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Base (matches your existing code background) -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#FF1E1E1E" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+
+    <!-- Glow effect overlay -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#2253CEBA" />
+            <stroke
+                android:width="2dp"
+                android:color="#53CEBA" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+</layer-list>

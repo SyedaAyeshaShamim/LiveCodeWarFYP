@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#10101A"
+    tools:context=".MultipleChoiceCplusFragment">
+    <ImageView
+        android:id="@+id/languageIcon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/cplus"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/timer"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/timergame"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.31"
+        app:layout_constraintStart_toEndOf="@+id/languageIcon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/timerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="02:30"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.137"
+        app:layout_constraintStart_toEndOf="@+id/timer"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/scoreText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Questions: 3/5"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/languageIcon" />
+
+    <!-- Code Snippet -->
+
+    <TextView
+        android:id="@+id/tvCoins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Coins: 0"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppins_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toEndOf="@+id/scoreText"
+        app:layout_constraintTop_toBottomOf="@+id/timerText" />
+
+    <TextView
+        android:id="@+id/tv_cpp_code"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="What will be the output of the following C++ code? \n\nint a = 5;\ncout  ++a;"
+        android:background="@drawable/question_bg"
+        android:padding="12dp"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:typeface="monospace"
+        android:elevation="2dp"
+        app:layout_constraintTop_toBottomOf="@id/scoreText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"/>
+
+    <!-- Options Group -->
+    <RadioGroup
+        android:id="@+id/rg_options"
+        android:layout_width="0dp"
+        android:outlineSpotShadowColor="@color/white"
+        android:outlineAmbientShadowColor="@color/white"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_cpp_code"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <RadioButton
+            android:id="@+id/rb_option_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_medium"
+            android:text="A. 4" />
+
+        <RadioButton
+            android:id="@+id/rb_option_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/white"
+            android:text="B. 5" />
+
+        <RadioButton
+            android:id="@+id/rb_option_c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/white"
+            android:text="C. 6" />
+
+        <RadioButton
+            android:id="@+id/rb_option_d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_medium"
+            android:text="D. Error" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnradio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#4CAF50"
+        android:text="Submit"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rg_options" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
